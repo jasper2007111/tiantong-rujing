@@ -96,8 +96,16 @@ with open(path) as f:
                     while i<len(cizu):
                         c_pinyin = pinyin_arr[juzi_index]
                         zi = juzi[juzi_index]
+                        
                         if len(c_pinyin)==0:
-                            body += f"<ruby>{zi}<rt>{ppyy[i][0]}</rt></ruby>"
+                            if "盡"==zi and len(cizu)==1:
+                                # "盡"字在单独情况下拼音都显示为jǐn，数量有大，特作处理。
+                                body += f"<ruby>{zi}<rt>jìn</rt></ruby>"
+                            elif "("==zi or ")"==zi or "["==zi or "]"==zi:
+                                # 特殊符号不标注拼音
+                                body += f"<ruby>{zi}<rt></rt></ruby>"
+                            else:
+                                body += f"<ruby>{zi}<rt>{ppyy[i][0]}</rt></ruby>"
                         else:
                             # 处理没有拼音的标记
                             if c_pinyin=="-":
