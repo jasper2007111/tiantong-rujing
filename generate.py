@@ -43,7 +43,9 @@ def filter_tag(sentence):
 # 繁体转简体
 converter = opencc.OpenCC('t2s.json')
 
-path = 'book.txt'
+name = "如净和尚语录"
+path = f'{name}.txt'
+
 body = ""
 with open(path) as f:
     for line in f.readlines():
@@ -138,28 +140,15 @@ with open(path) as f:
 body += ""
 # print(body)
 
-header = """
-<html>
-<head>
-<title>如净和尚语录</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<style type="text/css">
-    ruby {
-    line-height:250%;
-    margin-right: 4px;
-    }
-    ruby rt{
-        color: #bf242a;
-    }
-    h2 {
-        text-align: center;
-    }
-</style>
-</head>
-<body>
-"""
-with open("book.html","w") as f:
-    f.write(header)
-    f.write(body)
-    f.write("</body>\n</html>")
+from jinja2 import Template
+
+f2 = open("./templates/template.html","r")
+mystr = ""
+for i in f2.readlines():
+    mystr += i
+
+template = Template(mystr)
+content = template.render(title=name, content=body)
+
+with open(f"{name}.html","w") as f:
+    f.write(content)
