@@ -43,7 +43,7 @@ def filter_tag(sentence):
 # 繁体转简体
 converter = opencc.OpenCC('t2s.json')
 
-name = "如净和尚语录"
+name = "松源崇岳禅师语录"
 path = f'{name}.txt'
 
 body = ""
@@ -59,7 +59,7 @@ with open(path) as f:
                 level = root.attrib["level"]
                 tag = f"h{level}"
             except Exception as e:
-                print(e)
+                # print(e)
                 tag ="h2"
             
             body += f"<{tag}>"
@@ -76,7 +76,8 @@ with open(path) as f:
             body += f"</{tag}>"
             continue
         except Exception as e:
-            print(e)
+            # print(e)
+            pass
 
         if len(line.strip()) == 0:
             continue
@@ -103,10 +104,11 @@ with open(path) as f:
                             if "盡"==zi and len(cizu)==1:
                                 # "盡"字在单独情况下拼音都显示为jǐn，数量有大，特作处理。
                                 body += f"<ruby>{zi}<rt>jìn</rt></ruby>"
-                            elif "("==zi or ")"==zi or "["==zi or "]"==zi:
+                            elif zi in ["(", ")", "[", "]", "．"]:
                                 # 特殊符号不标注拼音
                                 body += f"<ruby>{zi}<rt></rt></ruby>"
                             else:
+                                # print("Default Mode: " + "/ ".join(my_list))  # 精确模式
                                 body += f"<ruby>{zi}<rt>{ppyy[i][0]}</rt></ruby>"
                         else:
                             # 处理没有拼音的标记
