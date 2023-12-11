@@ -1,0 +1,125 @@
+body {
+    padding-top: 10px;
+    background: #fbfaf8;
+}
+
+a {
+    color: #4285f4;
+}
+
+.vv-header {
+    display: inline-block;
+    line-height: 50px;
+    font-size: 22px;
+    color: #b45b59;
+}
+
+.vv-nav {
+    padding: 0px 0 0 15px;
+    font-size: 26px;
+    line-height: 50px;
+}
+.logoimg{
+    padding-right: 6px;
+    display: inline-block;
+    margin-top: -6px;
+}
+.headerbg {
+    font-size: 14px;
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0px 16px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.headerbg a {
+    color: rgba(0,0,0,0.54);
+	display: block;
+}
+.headerbg a.on{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #4285f4;
+    border-bottom: 2px solid #4285f4;
+    height: 40px;
+}
+.vv-search {
+    border: 0px solid #e7e7e7;
+}
+
+.vv-footer {
+    padding-top: 8px;
+}
+
+.vv-shenm {
+    padding-top: 8px;
+    padding-left: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 6px 0px;
+    color: #212121;
+    font-weight: 400;
+    text-align: center;
+}
+#content {
+    font-size: 16px;
+    overflow: hidden;
+    line-height: 2em;
+	font-family: SimSun, ËÎÌו, "Heiti SC";
+	padding: 20px 30px;
+    background: #fbfaf8;
+}
+#content p{
+    text-indent: 2em;
+    padding-bottom: 1em;
+}
+.m-page{
+    overflow: hidden;
+    background: #f2f2f2;
+    padding: 10px 15px;
+    margin: 0 auto;
+    border-top: 1px solid #e0e0e0;
+    background-color: #fafafa;
+}
+.m-search-nav{
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border-radius: 2px;
+    margin: 0 0 10px 0;
+}
+.panel-heading h3{
+    color: #4285f4;
+    line-height: 26px;
+    overflow: hidden;
+}
+.menu{
+    font-size: 16px;
+    line-height: 46px;
+    height: 46px;
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 2px;
+    margin: 5px 0 13px 0;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    transition: box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+#back-to-top{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(66, 133, 244, 0.7);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 2px;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+	display: none;
+}
